@@ -5,7 +5,7 @@ import numpy as np
 import sys
 
 if len(sys.argv) != 3:
-    print("Usage: bpix2img.py infile outfile\n")
+    print("Usage: bpix2img infile[badpixN] outfile\n")
     sys.exit(1)
 
 infile=sys.argv[1]
@@ -23,14 +23,8 @@ stt = cr.copy_colvals( bpix, "status")
 #
 # Turn array of status bytes into long integer
 #
-
-
 twos = 2**np.arange(32)[::-1]
 gg = [ np.sum(twos*ii) for ii in stt ]
-
-
-#gg=[ (ii[0]*256l*256*256)+(ii[1]*256l*256)+(ii[2]*256)+ii[3] for ii in stt ]
-#gg=tt
 
 #
 # chip coords go 1:1024 so add extra row/column so don't have to -1
@@ -45,10 +39,7 @@ for ii in range( len(xx) ):
 #
 # remove extra row/column and correct orientation, add extra bogus dim
 #
-#msk=msk[1:,1:]
-#msk=msk.reshape(1,1024,1024)
 
-#msk=msk[1:,:]
 foo=msk[1:,1:]
 msk=foo
 
