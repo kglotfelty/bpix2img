@@ -7,7 +7,7 @@ into a 2D image in CHIP coordinates.
 bpix2img acisf00635_repro_bpix1.fits[badpix6] bpix.img
 ```
 
-This script requires [http://cxc.cfa.harvard.edu/ciao](CIAO) be 
+This script requires [CIAO](http://cxc.cfa.harvard.edu/ciao) be 
 installed and initialized before running.
 
 
